@@ -62,12 +62,7 @@ class SaveAndReturnLater extends \ExternalModules\AbstractExternalModule
                     location.href = "<?php echo $url; ?>";
 
                 })
-
-
-
-            });
-
-
+            })
         </script>
      <?php
         }
