@@ -6,16 +6,11 @@ class SaveAndReturnLater extends \ExternalModules\AbstractExternalModule
 {
 
     public function redirect() {
-        $this->log("Mon message de log", [
-            "user" => 'admin',
-            "details" => "Launch redirect"
-        ]);
-
         $survey_name = $_REQUEST['survey_name'];
-        # Ask to Vincent why this parameter isn't available here
-        #$redirectUrl = $this->getProjectSetting('return_web_site_url');
+        $project_id = $_REQUEST['pid'];
+        $redirectUrl = $this->getProjectSetting('return_web_site_url', $project_id);
         
-        header('Location: '."http://localhost:8080/submit-survey//?survey_name=$survey_name&survey_status=Completed");
+        header('Location: '."$redirectUrl?survey_name=$survey_name&survey_status=Completed");
         die();
     }
 
