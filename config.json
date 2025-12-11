@@ -28,5 +28,9 @@
       "required": true,
       "type": "text"
     }
+  ],
+  "no-auth-pages": [
+    "index",
+    "redirect"
   ]
 }
